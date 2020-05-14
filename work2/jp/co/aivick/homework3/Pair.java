@@ -1,3 +1,5 @@
+package jp.co.aivick.homework3;
+
 public class Pair {
   
   public int first;
