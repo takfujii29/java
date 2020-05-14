@@ -1,5 +1,3 @@
-package javaWork;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -58,7 +56,7 @@ public class ListUtil {
 
 
 
-	  private static List<Pair> zip(List<Integer> list1, List<Integer> list2) {
+	  private static List<Pair<Integer, Integer>> zip(List<Integer> list1, List<Integer> list2) {
 		List<Pair> zips = new ArrayList<>();
 		int size = Math.min(list1.size(), list2.size());
 

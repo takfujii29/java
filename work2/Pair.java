@@ -7,14 +7,14 @@ public class Pair {
     this.first = first;
     this.second = second;
   }
-  public static void main(String[] args) {
-    Pair p = new Pair(1, 2);
-    int first = p.first();
-    int second = p.second();
-    System.out.println(first);
-    System.out.println(second);
+  // public static void main(String[] args) {
+  //   Pair p = new Pair(1, 2);
+  //   int first = p.first();
+  //   int second = p.second();
+  //   System.out.println(first);
+  //   System.out.println(second);
 
-  }
+  // }
   public int first() {
     return this.first;
   }
