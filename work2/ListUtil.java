@@ -17,8 +17,8 @@ public class ListUtil {
 	    System.out.println(hogeList);
 
 	    // 二つの整数のリストListを受け取り、それぞれのリストの対応する要素をペアPair
-	    var zips = ListUtil.zip(List.of(1, 2,3), List.of(2, 3, 4));
-	    System.out.println(zips);
+	    // var zips = ListUtil.zip(List.of(1, 2,3), List.of(2, 3, 4));
+	    // System.out.println(zips);
 
 	    //与えられた数の約数
 	    List<Integer> divisor = ListUtil.factors(24);
@@ -98,8 +98,8 @@ public class ListUtil {
 	  }
 	  
 	  //リストをペアにする
-	  private static List<Integer> pairs(List<Integer> numbers) {  
-		  var pairsList = new ArrayList<>();
+	  // private static List<Integer> pairs(List<Integer> numbers) {  
+		//   var pairsList = new ArrayList<>();
 		  
-		  return pairsList;  
-	  }
+		//   return pairsList;  
+	  // }
