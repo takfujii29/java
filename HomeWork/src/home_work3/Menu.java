@@ -17,24 +17,24 @@ public class Menu {
 
 	public String getName() {
 		return this.name;
-  }
+	}
 
-  public String getType() {
-    return this.type;
-  }
+    public String getType() {
+	    return this.type;
+	}
 
-  public List<Recipe> getRecipes() {
-    return this.recipes;
-  }
+	public List<Recipe> getRecipes() {
+	    return this.recipes;
+	}
 
-  public int getCal() {
-    int sum = 0;
-    int size = this.recipes.size();
-    for (int i = 0; i < size; i++) {
-      sum += this.recipes.get(i).getCal();
-    }
-    return sum;
-  }
+	public int getCal() {
+	    int sum = 0;
+	    int size = this.recipes.size();
+	    for (int i = 0; i < size; i++) {
+	      sum += this.recipes.get(i).getCal();
+	    }
+	    return sum;
+	}
 
 
 }

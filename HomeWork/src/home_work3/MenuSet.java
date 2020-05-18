@@ -1,5 +1,6 @@
 package home_work3;
 
+import java.util.Collections;
 import java.util.List;
 
 public class MenuSet {
@@ -7,7 +8,7 @@ public class MenuSet {
 	private List<Menu> menus;
 
 	public MenuSet(List<Menu> menus) {
-		this.menus = menus;
+		this.menus = Collections.unmodifiableList(menus);
 	}
 
 	public List<Menu> getMenus() {
