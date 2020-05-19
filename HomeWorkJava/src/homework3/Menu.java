@@ -27,7 +27,7 @@ public class Menu {
 	    return this.recipes;
 	}
 
-	public int getCal() {
+	public double getCal() {
 	    int sum = 0;
 	    int size = this.recipes.size();
 	    for (int i = 0; i < size; i++) {
@@ -35,6 +35,11 @@ public class Menu {
 	    }
 	    return sum;
 	}
+
+	  @Override
+	  public String toString() {
+	      return String.format("<%s,%s>", name, type);
+	  }
 
 
 }

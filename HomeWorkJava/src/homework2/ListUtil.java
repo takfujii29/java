@@ -237,6 +237,7 @@ public class ListUtil {
 													.sum();
  	}
 
+	//４つのペア -------------------------------------------------------------------
 	public static List<Pair<Integer, Pair<Integer, Pair<Integer, Integer>>>> zip4(List<Integer> list1, List<Integer> list2, List<Integer> list3, List<Integer> list4) {
 		var min = Math.min(Math.min(list1.size(), list2.size()), Math.min(list3.size(), list4.size()));
 		List<Pair<Integer, Pair<Integer, Pair<Integer, Integer>>>> result = new ArrayList<>();
@@ -250,4 +251,21 @@ public class ListUtil {
 	private static Pair<Integer, Pair<Integer, Pair<Integer, Integer>>> tetrad(Integer a, Integer b, Integer c, Integer d) {
 		return new Pair<>(1, new Pair<>(b, new Pair<>(c, d)));
 	}
+	//４つのペア  ラムダ式------------------------------------------------------------------
+//    public static <A, B, C, D> List<Pair<A, Pair<B, Pair<C, D>>>> zip4(List<A> list1,
+//            List<B> list2,
+//            List<C> list3, List<D> list4) {
+//
+//            var min = Math.min(Math.min(list1.size(), list2.size()),
+//                Math.min(list3.size(), list4.size()));
+//
+//            return IntStream.range(0, min)
+//                            .mapToObj(
+//                                i -> tetrad(list1.get(i), list2.get(i), list3.get(i), list4.get(i)))
+//                            .collect(Collectors.toList());
+//        }
+//
+//        private static <A, B, C, D> Pair<A, Pair<B, Pair<C, D>>> tetrad(A a, B b, C c, D d) {
+//            return new Pair<>(a, new Pair<>(b, new Pair<>(c, d)));
+//        }
 }
