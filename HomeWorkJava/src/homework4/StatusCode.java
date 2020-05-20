@@ -1,11 +1,11 @@
 package homework4;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 class StatusCode {
 	//汎用的なクラス　Map インターフェイス = 実装クラス
-	private static Map<String, String> statusMap = new TreeMap<>();
+	private static Map<String, String> statusMap = new HashMap<>();
 
 	public static void main(String[] args) {
 		statusMap.put("100", "Continue");
