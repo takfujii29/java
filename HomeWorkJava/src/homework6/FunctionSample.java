@@ -2,9 +2,10 @@ package homework6;
 
 import java.util.function.Function;
 
-public class Predicate {
+public class FunctionSample {
 
 	public static void main(String[] args) {
+
 		//文字列を受け取り、その長さを返すラムダ式。
 		Function<String, Integer> length = e -> e.length();
 		System.out.println(length.apply("あいうえお"));
@@ -27,6 +28,8 @@ public class Predicate {
 		Function<Boolean, Boolean> true3 = true1.andThen(even);
 		System.out.println(true2.apply(true));
 		System.out.println(true3.apply(true));
+
+
 	}
 
 }
