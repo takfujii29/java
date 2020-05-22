@@ -13,7 +13,6 @@ public class MyStack {
 		this.maxSize = maxSize;
 		this.data = new Object[maxSize];
 		this.top = 0;
-
 	}
 	//pushメソッド　後入れ
 	public void push(Object item) {
@@ -31,6 +30,12 @@ public class MyStack {
 		this.top--;
 		return this.data[this.top];
 	}
+
+//	@Override
+//	public String toString() {
+//		// TODO 自動生成されたメソッド・スタブ
+//		return super.toString();
+//	}
 //ObjectをStringに変換 System.out.println時に読めるように
 	public String toString() {
 	    StringBuilder sb = new StringBuilder();
