@@ -1,0 +1,42 @@
+SELECT R.id, R.name, SUM(RM.material_weight/100*M.calorie)
+FROM `recipe` R
+INNER JOIN `recipe_material` RM ON R.id=RM.recipe_id
+INNER JOIN `material` M ON RM.material_id=M.id
+GROUP BY R.id
+
+
+
+SELECT R.id, R.name, SUM(RM.material_weight)
+FROM `recipe` R
+INNER JOIN `recipe_material` RM ON R.id=RM.recipe_id
+INNER JOIN `material` M ON RM.material_id=M.id
+GROUP BY R.id
+
+SELECT menu.id, menu.name
+FROM menu
+INNER JOIN menu_recipe ON menu.id = menu_recipe.menu_id
+INNER JOIN recipe ON menu_recipe.recipe_id = recipe.id
+INNER JOIN recipe_material ON recipe.id = recipe_marerial.recipe_id
+INNER JOIN material ON recipe_material.material_id = material.id
+WHERE mateial.id = ?
+GROUP BY menu.id
+
+SELECT menu.id, menu.name, SUM(menu_recipe_weight*recipe_material_weight/100100*material.calorie)AS totalkcal
+FROM menu
+INNER JOIN menu_recipe ON menu.id = menu_recipe.menu_id
+INNER JOIN recipe ON menu_recipe.recipe_id = recipe.id
+INNER JOIN recipe_material ON recipe.id = recipe_marerial.recipe_id
+INNER JOIN material ON recipe_material.material_id = material.id
+HAVING totalkcal > 250
+GROUP BY menu.id
+
+
+SELECT AVG(totalkcal)/count(menusum)
+FORM
+(SELECT menu.id, menu.name, SUM(menu_recipe_weight*recipe_material_weight/100100*material.calorie)AS totalkcal
+FROM menu
+INNER JOIN menu_recipe ON menu.id = menu_recipe.menu_id
+INNER JOIN recipe ON menu_recipe.recipe_id = recipe.id
+INNER JOIN recipe_material ON recipe.id = recipe_marerial.recipe_id
+INNER JOIN material ON recipe_material.material_id = material.id
+GROUP BY menu.id)menusum
