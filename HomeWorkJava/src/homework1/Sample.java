@@ -8,7 +8,7 @@ public class Sample {
 
 		//小文字を大文字に変換
 		var upperStr = str.toUpperCase();
-		//大文字をぉ文字に変換
+		//大文字を小文字に変換
 		var lowerStr = str.toLowerCase();
 		System.out.println(upperStr);
 		System.out.println(lowerStr);

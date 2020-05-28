@@ -8,12 +8,12 @@ import java.util.stream.IntStream;
 
 public class ListUtil {
 
-	public static void main(final String[] args) {
+	public static void main(String[] args) {
 
 		// 偶数を返す
 		List<Integer> intList = List.of(1, 2, 3, 4, 5, 6);
 		List<Integer> evensList = ListUtil.evensof(intList);
-		for (final Integer e : evensList) {
+		for (Integer e : evensList) {
 			System.out.println(e);
 		}
 		// 二つの整数のリスト
@@ -126,36 +126,36 @@ public class ListUtil {
 
 
 	// 完全数に達するまでの約数-----------------------------------------------------------------------------------
-	public static List<Integer> perfects(int numMax) {
-		List<Integer> perfectsList = new ArrayList<>();
-		for (int i = 1; i < numMax; i++) {
-			int sum = 0;
-			List<Integer> divisorList = ListUtil.factors(i);
-			for (int divisor : divisorList) {
-				  sum += divisor;
-			  }
-			  if(sum - i == i) {
-				  perfectsList.add(i);
-			  }
-		}
-		return perfectsList;
-	}
+//	public static List<Integer> perfects(int numMax) {
+//		List<Integer> perfectsList = new ArrayList<>();
+//		for (int i = 1; i < numMax; i++) {
+//			int sum = 0;
+//			List<Integer> divisorList = ListUtil.factors(i);
+//			for (int divisor : divisorList) {
+//				  sum += divisor;
+//			  }
+//			  if(sum - i == i) {
+//				  perfectsList.add(i);
+//			  }
+//		}
+//		return perfectsList;
+//	}
 
-	// 完全数に達するまでの約数 ラムダ式----------------------------------------------------------------------------------
-//    private static int total(List<Integer> intList, int exclusive) {
-//        return intList.stream()
-//                      .filter(i -> i != exclusive)
-//                      .mapToInt(Integer::valueOf)
-//                      .sum();
-//    }
-//
-//    public static List<Integer> perfects(int n) {
-//        return IntStream.range(1, n + 1)
-//                        .mapToObj(i -> new Pair<Integer, List<Integer>>(i, factors(i)))
-//                        .filter(p -> total(p.second(), p.first()) == p.first())
-//                        .map(Pair::first)
-//                        .collect(Collectors.toList());
-//    }
+//	 完全数に達するまでの約数 ラムダ式----------------------------------------------------------------------------------
+    private static int total(List<Integer> intList, int exclusive) {
+        return intList.stream()
+                      .filter(i -> i != exclusive)
+                      .mapToInt(Integer::valueOf)
+                      .sum();
+    }
+
+    public static List<Integer> perfects(int n) {
+        return IntStream.range(1, n + 1)
+                        .mapToObj(i -> new Pair<Integer, List<Integer>>(i, factors(i)))
+                        .filter(p -> total(p.second(), p.first()) == p.first())
+                        .map(Pair::first)
+                        .collect(Collectors.toList());
+    }
 
 	//ペアのリストを返す--------------------------------------------------------------------------------------------------
 //	public static List<Pair<Integer, Integer>> pairs(List<Integer> list) {
@@ -169,8 +169,8 @@ public class ListUtil {
 	//ペアのリストを返す ラムダ式-------------------------------------------------------------------------------------------------
 	public static List<Pair<Integer, Integer>> pairs(List<Integer> list) {
 		return IntStream.range(0, list.size() - 1)
-									.mapToObj(i -> new Pair<>(list.get(i), list.get(i + 1)))
-									.collect(Collectors.toList());
+						.mapToObj(i -> new Pair<>(list.get(i), list.get(i + 1)))
+						.collect(Collectors.toList());
 	}
 
 
@@ -188,7 +188,7 @@ public class ListUtil {
 	//ソートになっているかを調べる ラムダ式----------------------------------------------------------------------------------
 	public static boolean sorted(List<Integer> intList) {
 		return pairs(intList).stream()
-										  .noneMatch(p -> p.first() > p.second());
+							 .noneMatch(p -> p.first() > p.second());
 	}
 
 //	第一引数の数値をリストの中から探し該当するインデックスを返す ------------------------------------------------------------------------
@@ -211,13 +211,13 @@ public class ListUtil {
 //	第一引数の数値をリストの中から探し該当するインデックスを返す  ラムダ式-----------------------------------------------------------------------
 	public static List<Integer> positions(int target, List<Integer> intList) {
 		List<Integer> indexes = IntStream.range(0, intList.size() )
-																	.boxed()
-																	.collect(Collectors.toList());
+										 .boxed()
+										 .collect(Collectors.toList());
 
 		return zip(indexes, intList).stream()
-				.filter(p -> p.second() == target)
-				.map(Pair::first)
-				.collect(Collectors.toList());
+									.filter(p -> p.second() == target)
+									.map(Pair::first)
+									.collect(Collectors.toList());
 	}
 
 
