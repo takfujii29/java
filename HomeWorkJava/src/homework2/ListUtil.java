@@ -142,12 +142,6 @@ public class ListUtil {
 //	}
 
 //	 完全数に達するまでの約数 ラムダ式----------------------------------------------------------------------------------
-    private static int total(List<Integer> intList, int exclusive) {
-        return intList.stream()
-                      .filter(i -> i != exclusive)
-                      .mapToInt(Integer::valueOf)
-                      .sum();
-    }
 
     public static List<Integer> perfects(int n) {
         return IntStream.range(1, n + 1)
@@ -155,6 +149,12 @@ public class ListUtil {
                         .filter(p -> total(p.second(), p.first()) == p.first())
                         .map(Pair::first)
                         .collect(Collectors.toList());
+    }
+    private static int total(List<Integer> intList, int exclusive) {
+    	return intList.stream()
+    			.filter(i -> i != exclusive)
+    			.mapToInt(Integer::valueOf)
+    			.sum();
     }
 
 	//ペアのリストを返す--------------------------------------------------------------------------------------------------

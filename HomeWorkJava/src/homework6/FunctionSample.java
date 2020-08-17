@@ -14,7 +14,7 @@ public class FunctionSample {
 		Function<String, String> uppercase = e -> e.toUpperCase();
 		System.out.println(uppercase.apply("abcde"));
 
-		//数値を受け取り、数値が偶数ならばtrue、それ以外ならばfalseを返すラムダ式。
+		//数値をsけ取り、数値が偶数ならばtrue、それ以外ならばfalseを返すラムダ式。
 		Function<Integer, Boolean> even = e -> e % 2 == 0;
 		System.out.println(even.apply(6));
 
@@ -26,8 +26,8 @@ public class FunctionSample {
 		//3.と4.を合成したラムダ式。Function<T,R>インターフェースのデフォルトメソッドを利用すること。
 		Function<Boolean, Boolean> true2 = even.compose(true1);
 		Function<Boolean, Boolean> true3 = true1.andThen(even);
-		System.out.println(true2.apply(true));
-		System.out.println(true3.apply(true));
+		System.out.println(true2.apply(false));
+		System.out.println(true3.apply(false));
 
 
 	}
